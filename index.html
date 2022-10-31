@@ -1,0 +1,968 @@
+<!doctype html>
+<!--
+  -->
+<html>
+	<head>
+		<meta charset="utf-8">
+        <meta content="text/html; charset=UTF-8; X-Content-Type-Options=osniff" http-equiv="Content-Type" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>My career journey</title>
+		<meta name="author" content="Vikas Dhiman">
+
+		<link rel="stylesheet" type="text/css" href="reveal.js/dist/reset.css">
+		<link rel="stylesheet" type="text/css" href="reveal.js/dist/reveal.css">
+		<link rel="stylesheet" type="text/css" href="./reveal.js/dist/theme/white.css">
+
+	    <link rel="stylesheet" href="reveal.js-plugins/chalkboard/style.css">
+
+
+		<!-- Theme used for syntax highlighting of code -->
+        <link rel="stylesheet" type="text/css" href="reveal.js/plugin/highlight/zenburn.css">
+        <link rel="stylesheet" type="text/css" href="index.css">
+
+	    <!-- Font awesome -->
+	    <link rel="stylesheet" href="../reveal.js-plugins/menu/font-awesome/css/fontawesome.css">
+
+		<!-- Printing and PDF exports -->
+		<!-- script>hm
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/dist/print/pdf.css' : 'reveal.js/dist/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script -->
+        <script>
+         function show_on_svgload(svgid, eleid) {
+             var elementids = Array.from(arguments).slice(1);
+             var show_element = function () {
+                 var svg = document.getElementById(svgid)
+                        || console.error("Bad svgid", svgid);
+                 var style_show = svg.getAttribute("style-show") || "display:inherit";
+                 Index.forSVGElementById(
+                     svgid,
+                     elementids,
+                     function (ele) { ele.style.cssText = style_show; });
+             };
+             if (document.readyState == "complete") {
+                 show_element();
+             } else {
+                 window.addEventListener("load", show_element());
+             }
+         };
+         function hide_on_svgload(svgid, eleid) {
+             var elementids = Array.from(arguments).slice(1);
+             var hide_element = function () {
+                 var svg = document.getElementById(svgid)
+                        || console.error("Bad svgid", svgid);
+                 var style_hide = svg.getAttribute("style-hide") || "display:none";
+                 Index.forSVGElementById(
+                     svgid,
+                     elementids,
+                     function (ele) { ele.style.cssText = style_hide; });
+             };
+             if (document.readyState == "complete") {
+                 hide_element();
+             } else {
+                 window.addEventListener("load", hide_element());
+             }
+         };
+        </script>
+        <script>
+         document.presentationtitle = "My career journey";
+         document.presentationauthor = "Vikas Dhiman";
+        </script>
+        <style >
+         .obs-map-plan {
+             height:500px;
+         }
+         .mapping-and-localization {
+             position:absolute;top:38%;left:15%;font-size:24pt;text-align:right;color:red;
+             transform: rotate(-38deg);
+             background-color: var(--main-bg-color);
+         }
+         .deep-reinforcement-learning {
+             position:absolute;top:83%;left:30%;
+             font-size:24pt;text-align:right;color:red
+         }
+        </style>
+	</head>
+	<body style="background-color: #000">
+  <div style="display:none" >
+  \(
+\newcommand{\TODO}[1]{{\color{red}TODO: {#1}}}
+
+\renewcommand{\vec}[1]{\mathbf{#1}}
+\newcommand{\state}{\vec{x}}
+\def\statet{\state_t}
+\def\statetp{\state_{t-1}}
+\def\statehist{\state_{1:t-1}}
+\def\statetn{\state_{t+1}}
+\def\obs{\meas}
+\def\obst{\obs_t}
+\def\act{a}
+\def\actt{\act_t}
+\def\acttp{\act_{t-1}}
+\def\acttn{\act_{t+1}}
+\def\Obs{\mathcal{O}}
+\def\ObsEnc{\Phi_o}
+\def\ObsProb{P_o}
+\def\ObsFunc{C}
+\def\ObsFuncFull{\ObsFunc(\statet, \actt) \rightarrow \obst}
+\def\ObsFuncInv{\ObsFunc^{-1}}
+\def\ObsFuncInvFull{\ObsFuncInv(\obst, \statetp, \actt) \rightarrow \statet}
+\def\StateSp{\mathcal{X}}
+\def\Action{\mathcal{A}}
+\def\TransP{P_{T}}
+\def\Trans{T}
+\def\TransFull{\Trans(\statet, \actt) \rightarrow \statetn}
+\def\TransObs{T_c}
+\def\Rew{R}
+\def\rew{r}
+\def\rewards{\vec{r}_{1:t}}
+\def\rewt{\rew_t}
+\def\rewtp{\rew_{t-1}}
+\def\rewtn{\rew_{t+1}}
+\def\RewFull{\Rew(\statet, \actt) \rightarrow \rewtn}
+\def\TransObsFull{\TransObs(\statet, \obst, \actt, \rewt; \theta_T) \rightarrow \statetn}
+\def\Value{V}
+\def\pit{\pi_t}
+\def\piDef{\pi(\acttn|\statet, \obst, \actt, \rewt; \theta_\pi) \rightarrow \pit(\acttn ; \theta_\pi)}
+\def\Valuet{\Value_t}
+\def\ValueDef{\Value(\statet, \obst, \actt, \rewt; \theta_\Value) \rightarrow \Valuet(\theta_\Value)}
+\def\R{\mathbb{R}}
+\def\E{\mathbb{E}}
+\newcommand{\Goal}{\mathcal{G}}
+\newcommand{\goalRV}{G}
+\newcommand{\meas}{z}
+\newcommand{\measurements}{\vec{\meas}_{1:t}}
+\newcommand{\meast}[1][t]{\meas_{#1}}
+\newcommand{\param}{\theta}
+\newcommand{\policy}{\pi}
+\newcommand{\graph}{G}
+\newcommand{\vtces}{V}
+\newcommand{\edges}{E}
+\newcommand{\st}{\state}
+\newcommand{\stn}{\st_{t+1}}
+\newcommand{\stt}{\st_t}
+\newcommand{\stk}{\st_k}
+\newcommand{\stj}{\st_j}
+\newcommand{\sti}{\st_i}
+\newcommand{\St}{\mathcal{S}}
+\newcommand{\Act}{\mathcal{A}}
+\newcommand{\acti}{\act_i}
+\newcommand{\lpt}{\delta}
+\newcommand{\trans}{P_T}
+\newcommand{\Q}{\qValue}
+
+\newcommand{\fwcost}{Q}
+\newcommand{\fw}{\fwcost}
+\newcommand{\qValue}{Q}
+\newcommand{\prew}{\Upsilon}
+\newcommand{\epiT}{T}
+\newcommand{\vma}{\alpha_\Value}
+\newcommand{\qma}{\alpha_\qValue}
+\newcommand{\prewma}{\alpha_\prew}
+\newcommand{\fwma}{\alpha_\fwcost}
+\newcommand{\maxValueBeam}{\vec{\state}_{\Value:\text{max}(m)}}
+\newcommand{\nil}{\emptyset}
+\newcommand{\discount}{\gamma}
+\newcommand{\minedgecost}{\fwcost_0}
+\newcommand{\goal}{g}
+\newcommand{\pos}{x}
+%\newcommand{\fwargs}[5]{\fw_{#4}^{#5}\left({#3}\middle|{#1}, {#2}\right)}
+\newcommand{\fwargs}[5]{\fw_{#4}^{#5}\left({#1}, {#2}, {#3}\right)}
+\newcommand{\Rgoal}{R_{\text{goal}}}
+
+\newcommand{\Loo}{Latency-1:\textgreater1}
+
+\newcommand{\Loss}{\mathcal{L}}
+\newcommand{\LossText}[1]{\Loss_{\text{#1}}}
+\newcommand{\LossDDPG}{\LossText{ddpg}}
+\newcommand{\LossStep}{\LossText{step}}
+\newcommand{\LossLo}{\LossText{lo}}
+\newcommand{\LossUp}{\LossText{up}}
+\newcommand{\LossTrieq}{\LossText{trieq}}
+
+\newcommand{\tgt}{\text{tgt}}
+\newcommand{\Qstar}{\Q_{*}}
+\newcommand{\Qtgt}{\Q_{\text{tgt}}}
+\newcommand{\ytgt}{y_t}
+
+
+% Symbols
+\newcommand{\ctrl}{\vec{u}}
+\newcommand{\Ctrl}{\mathcal{U}}
+\newcommand{\Data}{\mathcal{D}}
+\newcommand{\stdt}{\dot{\state}}
+\newcommand{\StDt}{\dot{\StateSp}}
+\newcommand{\dynSt}{f}
+\newcommand{\dynCt}{g}
+\newcommand{\bDynSt}{\bar{\dynSt}}
+\newcommand{\bDynCt}{\bar{\dynCt}}
+\newcommand{\dynAff}{F}
+\newcommand{\bDynAff}{\bar{\dynAff}}
+\newcommand{\ctrlaff}{\underline{\mathbf{\ctrl}}}
+\newcommand{\smallbmat}[1]{\left[\begin{smallmatrix}#1\end{smallmatrix}\right]}
+\newcommand{\Knl}{K}
+\newcommand{\knl}{\kappa}
+\newcommand{\bKx}{k_\state}
+\newcommand{\bKF}{k_\dynAff}
+\newcommand{\bKFu}{k_{\dynAff\ctrl}}
+\newcommand{\bKFx}{k_{\dynAff\state}}
+\newcommand{\bKFux}{k_{\dynAff\ctrl\state}}
+\newcommand{\covf}{\text{cov}}
+\newcommand{\dt}{\delta t}
+\newcommand{\dSt}{\stdt}
+\newcommand{\N}{\mathcal{N}}
+\newcommand{\StDat}{\mathbf{X}}
+\newcommand{\StDtDat}{\dot{\mathbf{X}}}
+\newcommand{\CtDat}{\underline{\boldsymbol{\mathcal{U}}}_{1:k}}
+\newcommand{\mat}[1]{{#1}}
+\newcommand{\Y}{\mat{Y}}
+\newcommand{\bY}{\bar{\Y}}
+\newcommand{\W}{\mat{W}}
+\newcommand{\V}{\mat{V}}
+\newcommand{\mH}{\mat{H}}
+\newcommand{\KH}{\Knl^\mH}
+\newcommand{\kH}{\knl^\mH}
+\newcommand{\GP}{\mathcal{GP}}
+\newcommand{\kDA}{\knl^\dynAff}
+\newcommand{\KDA}{\Knl^\dynAff}
+%\newcommand{\M}{\mathcal{M}}
+\newcommand{\kh}{\knl^{\dynAff\ctrlaff}}
+\newcommand{\KDat}{\mathfrak{K}}
+\newcommand{\kDat}{\bm{\knl}}
+\newcommand{\KhDat}{\KDat^{\dynAff\ctrlaff}}
+\newcommand{\khDADat}{\kDat^{\dynAff\ctrlaff\dynAff}}
+\newcommand{\khDA}{\knl^{\dynAff\ctrlaff\dynAff}}
+\newcommand{\dynAffDat}{\mathbf{\dynAff}}
+\newcommand{\grad}{\nabla}
+\newcommand{\Lie}{\mathcal{L}}
+\newcommand{\tdf}{\tilde{f}}
+\newcommand{\tdg}{\tilde{g}}
+\newcommand{\barf}{\bar{f}}
+\newcommand{\barg}{\bar{g}}
+\newcommand{\erf}{\textit{erf}}
+\newcommand{\etal}{et~al.}
+
+\newcommand{\CBC}{\mbox{CBC}}
+\newcommand{\CBCtwo}{\CBC^{(2)}}
+\newcommand{\CBCr}{\CBC^{(r)}}
+\newcommand{\Prob}{\mathbb{P}}
+\newcommand{\tdbff}{\bff^*_k}
+
+\newcommand{\mDynAffs}{\bfM_k}
+\newcommand{\bfBs}{\bfB_k}
+
+
+\DeclareMathOperator{\vect}{\textit{vec}}
+\DeclareMathOperator{\diag}{\mathbf{diag}}
+\DeclareMathOperator{\cov}{cov}
+\DeclareMathOperator{\Cov}{\mathbf{Cov}}
+\DeclareMathOperator{\Var}{Var}
+
+% Calligraphic fonts
+\newcommand{\calA}{{\cal A}}
+\newcommand{\calB}{{\cal B}}
+\newcommand{\calC}{{\cal C}}
+\newcommand{\calD}{{\cal D}}
+\newcommand{\calE}{{\cal E}}
+\newcommand{\calF}{{\cal F}}
+\newcommand{\calG}{{\cal G}}
+\newcommand{\calH}{{\cal H}}
+\newcommand{\calI}{{\cal I}}
+\newcommand{\calJ}{{\cal J}}
+\newcommand{\calK}{{\cal K}}
+\newcommand{\calL}{{\cal L}}
+\newcommand{\calM}{{\cal M}}
+\newcommand{\calN}{{\cal N}}
+\newcommand{\calO}{{\cal O}}
+\newcommand{\calP}{{\cal P}}
+\newcommand{\calQ}{{\cal Q}}
+\newcommand{\calR}{{\cal R}}
+\newcommand{\calS}{{\cal S}}
+\newcommand{\calT}{{\cal T}}
+\newcommand{\calU}{{\cal U}}
+\newcommand{\calV}{{\cal V}}
+\newcommand{\calW}{{\cal W}}
+\newcommand{\calX}{{\cal X}}
+\newcommand{\calY}{{\cal Y}}
+\newcommand{\calZ}{{\cal Z}}
+
+% Sets:
+\newcommand{\setA}{\textsf{A}}
+\newcommand{\setB}{\textsf{B}}
+\newcommand{\setC}{\textsf{C}}
+\newcommand{\setD}{\textsf{D}}
+\newcommand{\setE}{\textsf{E}}
+\newcommand{\setF}{\textsf{F}}
+\newcommand{\setG}{\textsf{G}}
+\newcommand{\setH}{\textsf{H}}
+\newcommand{\setI}{\textsf{I}}
+\newcommand{\setJ}{\textsf{J}}
+\newcommand{\setK}{\textsf{K}}
+\newcommand{\setL}{\textsf{L}}
+\newcommand{\setM}{\textsf{M}}
+\newcommand{\setN}{\textsf{N}}
+\newcommand{\setO}{\textsf{O}}
+\newcommand{\setP}{\textsf{P}}
+\newcommand{\setQ}{\textsf{Q}}
+\newcommand{\setR}{\textsf{R}}
+\newcommand{\setS}{\textsf{S}}
+\newcommand{\setT}{\textsf{T}}
+\newcommand{\setU}{\textsf{U}}
+\newcommand{\setV}{\textsf{V}}
+\newcommand{\setW}{\textsf{W}}
+\newcommand{\setX}{\textsf{X}}
+\newcommand{\setY}{\textsf{Y}}
+\newcommand{\setZ}{\textsf{Z}}
+
+% Vectors
+\newcommand{\bfa}{\mathbf{a}}
+\newcommand{\bfb}{\mathbf{b}}
+\newcommand{\bfc}{\mathbf{c}}
+\newcommand{\bfd}{\mathbf{d}}
+\newcommand{\bfe}{\mathbf{e}}
+\newcommand{\bff}{\mathbf{f}}
+\newcommand{\bfg}{\mathbf{g}}
+\newcommand{\bfh}{\mathbf{h}}
+\newcommand{\bfi}{\mathbf{i}}
+\newcommand{\bfj}{\mathbf{j}}
+\newcommand{\bfk}{\mathbf{k}}
+\newcommand{\bfl}{\mathbf{l}}
+\newcommand{\bfm}{\mathbf{m}}
+\newcommand{\bfn}{\mathbf{n}}
+\newcommand{\bfo}{\mathbf{o}}
+\newcommand{\bfp}{\mathbf{p}}
+\newcommand{\bfq}{\mathbf{q}}
+\newcommand{\bfr}{\mathbf{r}}
+\newcommand{\bfs}{\mathbf{s}}
+\newcommand{\bft}{\mathbf{t}}
+\newcommand{\bfu}{\mathbf{u}}
+\newcommand{\bfv}{\mathbf{v}}
+\newcommand{\bfw}{\mathbf{w}}
+\newcommand{\bfx}{\mathbf{x}}
+\newcommand{\bfy}{\mathbf{y}}
+\newcommand{\bfz}{\mathbf{z}}
+
+
+\newcommand{\bfalpha}{\boldsymbol{\alpha}}
+\newcommand{\bfbeta}{\boldsymbol{\beta}}
+\newcommand{\bfgamma}{\boldsymbol{\gamma}}
+\newcommand{\bfdelta}{\boldsymbol{\delta}}
+\newcommand{\bfepsilon}{\boldsymbol{\epsilon}}
+\newcommand{\bfzeta}{\boldsymbol{\zeta}}
+\newcommand{\bfeta}{\boldsymbol{\eta}}
+\newcommand{\bftheta}{\boldsymbol{\theta}}
+\newcommand{\bfiota}{\boldsymbol{\iota}}
+\newcommand{\bfkappa}{\boldsymbol{\kappa}}
+\newcommand{\bflambda}{\boldsymbol{\lambda}}
+\newcommand{\bfmu}{\boldsymbol{\mu}}
+\newcommand{\bfnu}{\boldsymbol{\nu}}
+\newcommand{\bfomicron}{\boldsymbol{\omicron}}
+\newcommand{\bfpi}{\boldsymbol{\pi}}
+\newcommand{\bfrho}{\boldsymbol{\rho}}
+\newcommand{\bfsigma}{\boldsymbol{\sigma}}
+\newcommand{\bftau}{\boldsymbol{\tau}}
+\newcommand{\bfupsilon}{\boldsymbol{\upsilon}}
+\newcommand{\bfphi}{\boldsymbol{\phi}}
+\newcommand{\bfchi}{\boldsymbol{\chi}}
+\newcommand{\bfpsi}{\boldsymbol{\psi}}
+\newcommand{\bfomega}{\boldsymbol{\omega}}
+\newcommand{\bfxi}{\boldsymbol{\xi}}
+\newcommand{\bfell}{\boldsymbol{\ell}}
+
+% Matrices
+\newcommand{\bfA}{\mathbf{A}}
+\newcommand{\bfB}{\mathbf{B}}
+\newcommand{\bfC}{\mathbf{C}}
+\newcommand{\bfD}{\mathbf{D}}
+\newcommand{\bfE}{\mathbf{E}}
+\newcommand{\bfF}{\mathbf{F}}
+\newcommand{\bfG}{\mathbf{G}}
+\newcommand{\bfH}{\mathbf{H}}
+\newcommand{\bfI}{\mathbf{I}}
+\newcommand{\bfJ}{\mathbf{J}}
+\newcommand{\bfK}{\mathbf{K}}
+\newcommand{\bfL}{\mathbf{L}}
+\newcommand{\bfM}{\mathbf{M}}
+\newcommand{\bfN}{\mathbf{N}}
+\newcommand{\bfO}{\mathbf{O}}
+\newcommand{\bfP}{\mathbf{P}}
+\newcommand{\bfQ}{\mathbf{Q}}
+\newcommand{\bfR}{\mathbf{R}}
+\newcommand{\bfS}{\mathbf{S}}
+\newcommand{\bfT}{\mathbf{T}}
+\newcommand{\bfU}{\mathbf{U}}
+\newcommand{\bfV}{\mathbf{V}}
+\newcommand{\bfW}{\mathbf{W}}
+\newcommand{\bfX}{\mathbf{X}}
+\newcommand{\bfY}{\mathbf{Y}}
+\newcommand{\bfZ}{\mathbf{Z}}
+
+
+\newcommand{\bfGamma}{\boldsymbol{\Gamma}}
+\newcommand{\bfDelta}{\boldsymbol{\Delta}}
+\newcommand{\bfTheta}{\boldsymbol{\Theta}}
+\newcommand{\bfLambda}{\boldsymbol{\Lambda}}
+\newcommand{\bfPi}{\boldsymbol{\Pi}}
+\newcommand{\bfSigma}{\boldsymbol{\Sigma}}
+\newcommand{\bfUpsilon}{\boldsymbol{\Upsilon}}
+\newcommand{\bfPhi}{\boldsymbol{\Phi}}
+\newcommand{\bfPsi}{\boldsymbol{\Psi}}
+\newcommand{\bfOmega}{\boldsymbol{\Omega}}
+
+
+% Blackboard Bold:
+\newcommand{\bbA}{\mathbb{A}}
+\newcommand{\bbB}{\mathbb{B}}
+\newcommand{\bbC}{\mathbb{C}}
+\newcommand{\bbD}{\mathbb{D}}
+\newcommand{\bbE}{\mathbb{E}}
+\newcommand{\bbF}{\mathbb{F}}
+\newcommand{\bbG}{\mathbb{G}}
+\newcommand{\bbH}{\mathbb{H}}
+\newcommand{\bbI}{\mathbb{I}}
+\newcommand{\bbJ}{\mathbb{J}}
+\newcommand{\bbK}{\mathbb{K}}
+\newcommand{\bbL}{\mathbb{L}}
+\newcommand{\bbM}{\mathbb{M}}
+\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\bbO}{\mathbb{O}}
+\newcommand{\bbP}{\mathbb{P}}
+\newcommand{\bbQ}{\mathbb{Q}}
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\bbS}{\mathbb{S}}
+\newcommand{\bbT}{\mathbb{T}}
+\newcommand{\bbU}{\mathbb{U}}
+\newcommand{\bbV}{\mathbb{V}}
+\newcommand{\bbW}{\mathbb{W}}
+\newcommand{\bbX}{\mathbb{X}}
+\newcommand{\bbY}{\mathbb{Y}}
+\newcommand{\bbZ}{\mathbb{Z}}
+
+\newcommand{\CBCr}{\mbox{CBC}^{(r)}}
+
+\)
+\(
+
+\newenvironment{proof}{\paragraph{Proof:}}{\hfill$\square$}
+%\newtheorem{theorem}{Theorem}
+%\theoremstyle{remark}
+%\newtheorem{lemma}{Lemma}
+%\newtheorem{remark}{Remark}
+%\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+%\theoremstyle{definition}
+\newtheorem{exmp}{Example}
+\newtheorem{conj}{Conjecture}
+%\newtheorem{corollary}{Corollary}
+\newtheorem{Proposition}{Proposition}
+\newtheorem{ansatz}{Assumption}
+
+\newtheorem{problem}{Problem}
+
+
+
+\newcommand{\oprocendsymbol}{\hbox{$\bullet$}}
+\newcommand{\oprocend}{\relax\ifmmode\else\unskip\hfill\fi\oprocendsymbol}
+\def\eqoprocend{\tag*{$\bullet$}}
+
+\newcommand{\blue}[1]{\color{blue}{#1}}
+
+%% math functions
+\newcommand{\modulo}{\text{mod}}
+
+%% symbols
+\newcommand{\real}{\mathbb{R}}
+\newcommand{\integers}{\mathbb{N}}
+\newcommand{\complex}{\mathbb{C}}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\softmax}{softmax}
+\DeclareMathOperator*{\Tr}{Tr}
+\DeclareMathOperator*{\RE}{Re}
+\DeclareMathOperator*{\IM}{Im}
+\newcommand{\trc}{\mathbf{trc}}
+\newcommand{\Cov}{\mathbf{Cov}}
+\newcommand{\floor}[1]{\lfloor #1 \rfloor}
+\newcommand{\ceil}[1]{\lceil #1 \rceil}
+\newcommand{\scaleMathLine}[2][1]{\resizebox{#1\linewidth}{!}{$\displaystyle{#2}$}}
+\newcommand{\ubfu}{\underline{\mathbf{u}}}
+  \)
+  </div>
+        <div class="reveal" >
+			<div class="slides" >
+
+<!-- Start of header -->
+<div style="position:absolute;left:0;top:0;width:100%">
+    <div style="clear: both;width:100%;display:flex; justify-content: space-between;"
+            id="footer-chapter-progress"
+            inactivestyle="background: #b6b6b6;opacity:1"
+            activestyle="background: rgba(0, 0, 0, 0);opacity:1"
+    >
+        <style>
+            #footer-chapter-progress>.chapter-progress {
+                font-size: 12px;
+                padding: 1px;
+                width: 33%;
+                opacity: 0;
+                border-left: 1px solid white;
+                border-right: 1px solid white;
+            }
+            #footer-chapter-progress>.chapter-progress>span {
+                margin:auto;
+            }
+        </style>
+        <span class="chapter-progress" ><span>Estimation</span></span>
+        <span class="chapter-progress" ><span>Propagation</span></span>
+        <span class="chapter-progress" ><span>Continuous time</span></span>
+        <span class="chapter-progress" ><span>Higher relative degree</span></span>
+    </div>
+</div>
+<!-- End of head -->
+
+<!-- Start of slides -->
+<section id="title-slide">
+    <h2>My career journey</h2>
+    <div>
+        Dr Vikas Dhiman
+        <br/>
+        Professor at the University of Maine
+        <br/>
+        CL DAV alumnus
+  </div>
+  <aside class="notes" data-markdown>
+      Hi everyone,
+
+      I am Vikas Dhiman, I finished my PhD last year from University of
+      Michigan. Now I am a postdoc co-advised under Nikolay Atanasov and Henrik
+      Christensen.
+
+      I am going to talk about my work on Probabilistic safety constraints for
+      higher order relative degree systems.
+
+      This work was done under the supervision of Nikolay Atanasov and in
+      collaboration with Mohammad and Massimo Franceschetti.
+  </aside>
+</section>
+<section id="a-bit-about-myself" >
+    <h2>My journey</h2>
+    <span>CL DAV (1989-2004)</span>
+    <div class="r-stack">
+        <img class="fragment current-visible" data-src="./media/journey/cldav.jpeg" height="350" />
+        <img class="fragment"  data-src="./media/journey/cldav-bldg.png" height="500" />
+    </div>
+</section>
+<section id="a-bit-about-myself-iit" >
+    <h2>My journey</h2>
+    <span>IIT Roorkee (2004-08)</span>
+    <div class="r-stack">
+        <img class="fragment current-visible" data-src="./media/journey/vikas-iitr.JPG" height="500" />
+        <img class="fragment" data-src="./media/journey/admin-bldg-iitr.jpeg" height="500" />
+    </div>
+</section>
+
+<section id="a-bit-about-myself-deshaw" >
+    <h2>My journey</h2>
+    <span>DEShaw Hyderabad (2008-12)</span>
+    <img data-src="./media/journey/deshaw.jpg" height="500" />
+</section>
+
+<!--  section id="a-bit-about-myself-buffalo" >
+    <h2>My journey</h2>
+    <span>University at Buffalo, USA (2012-14)</span>
+    <div class="r-stack">
+        <img class="fragment current-visible" data-src="./media/journey/vikas-buffalo.jpg" height="500" />
+        <img class="fragment" data-src="./media/journey/buffalo-bldg.jpg" height="500" />
+    </div>
+</section -->
+
+<section id="a-bit-about-myself-umich" >
+    <h2>My journey</h2>
+    <span>University of Michigan, USA (2012-19)</span>
+    <div class="r-stack">
+        <img class="fragment current-visible" data-src="./media/journey/vikas-umich.jpg" height="500" />
+        <img class="fragment" data-src="./media/journey/umich-bldg.jpg" height="500" />
+    </div>
+</section>
+
+<section id="a-bit-about-myself-maine" >
+    <h2>My journey</h2>
+    <span>University of Maine, USA (2021-)</span>
+    <div class="r-stack">
+        <img class="fragment current-visible" data-src="./media/journey/vikas-umaine.jpg" height="500" />
+        <img class="fragment" data-src="./media/journey/umaine-bldg.jpg" height="500" />
+    </div>
+</section>
+
+<section id="a-bit-about-myself-summary" >
+    <h2>My journey</h2>
+    <table>
+    <tr class="img-row">
+        <td>
+            <span>CL DAV (Nursery to 12th)</span>
+            <img data-src="./media/journey/cldav-bldg.png" height="200" />
+        </td>
+        <td>
+            <span>IIT Roorkee (2004-08)</span>
+            <img  data-src="./media/journey/admin-bldg-iitr.jpeg" height="200" />
+        </td>
+    </tr>
+    <tr class="img-row">
+        <td  >
+            <span>University of Michigan, USA (2012-19) </span>
+            <img data-src="./media/journey/umich-bldg.jpg" height="200" />
+        </td>
+        <td >
+            <span>University of Maine, USA (2021-) </span>
+            <img data-src="./media/journey/umaine-bldg.jpg" height="200" />
+        </td>
+    </tr>
+    </table>
+    <aside class="notes" data-markdown>
+        * Studied hard
+        * Did best in high-school
+        * At college, I just chose default Electrical Engineering (maybe you can choose Computer Science).
+        * Once I got into college, it was Little bit more relaxed. Not as bad. I
+          did okay. You might think everyone in IITs is super smart. But they
+          are just normal people who worked super hard in high school.
+        * IIT have placement season where all the companies come and interview
+          back to back. Almost everyone gets a really good job. I had 6 back to
+          back interviews 5 rejects and one accept. Any bank Once I paid off my student loans.
+        * DEShaw Hyderabad: an IT role in a US-based financial company. Like most software
+          workplaces, this english speaking worksplace. More of my colleagues
+          did not know Hindi, so I had to speak English. I made a lot of money
+          and quickly paid of my student loans. Eat out regularly, hire a maid,
+          travel regularly, buy a bike; not having to think about small expenses.
+        * Working at DeShaw is a desirable job. A lot of my coworkers were from
+          Microsoft, Amazon, Google job or went there.
+        * DeShaw was great for the first two years. At first there was a lot to
+          learn and I was happy about that. Life was great, but the learning
+          stopped. At workplace once you learn something, your boss will
+          ask to do the same thing over and over again. I also managed to save a
+          lot of money. So I want to try something new. While some of frieds
+          applied to other companies, I applied for PhDs in the USA.
+        * What is PhD? I would run into hard problems at work, but the company
+          will not allow me to work on those. PhD is just like school but you
+          are working full time on projects, no course work no exams, just
+          projects; but really hard projects. Projects that no one has ever done
+          before, not even your professor.
+        * So I applied for 3 years straight to 10 colleges per year. I got one
+          accept in the third try. I got into a US University.
+        * PhD is usually required to become a professor. PhD in engineering
+          usually takes 4-7 years. In PhD they pay you a little bit. It is all
+          research projects and writing about them. On an average Masters
+          students make more money than a PhD. If you care about making money
+          then, you should do just Masters. PhD jobs are really.
+        * US is a bit different then India. Yes, dollar to rupee conversion is
+          high. Yes you make income in dollars. But living in the USA is also
+          expensive. Unlike Deshaw eating out regulary was a luxury. I learned to
+          cook and clean for the first time. After doing research in the USA I
+          applied to lot of University for professorship in the USA and in
+          India. After many more 40 rejections per year for 2 years, I got in
+          this position.
+        # Possible questions
+        * What are some tips for clear entrance tests?
+        * Why should one want to be a professor?
+        * How are students in IIT like?
+        * How hard do you need to work in IIT?
+        * Should we fear robot takeover?
+    </aside>
+</section>
+
+<section id="my-work-video" >
+    <h2>My work</h2>
+    <div style="position:relative;margin:auto;display:inline-block;left:2%">
+        <style>
+         .div-row-stack div {
+             display: inline-block;
+             background-color: white;
+             opacity: 100%;
+         }
+         .div-row-stack div video {
+             margin: 5px 0;
+             height: 225px;
+         }
+         .overlay-stack div {
+             display: inline-block;
+             background-color: white;
+             opacity: 100%;
+         }
+         .overlay-stack div video {
+             margin: 5px 0;
+             height: 450px;
+         }
+        </style>
+        <div class="overlay-stack r-stack"
+             style="background-color:white;">
+            <div class="fragment current-visible">
+                <img data-src="media/orcvio/sem_track_images.gif" height="500" />
+                <h6>OrcVIO</h6>
+            </div>
+            <div class="fragment current-visible">
+                <video
+                    class="fragment-play"
+                    loop="true"
+                    muted="True"
+                    height="250"
+                    data-playbackRate="2.0"
+                >
+                    <source type="video/mp4" data-src="media/mutloc/concatenated-ffmpeg-faster.ogg#t=10,20"/>
+                </video>
+                <h4>Mutual Localization</h4>
+                <cite data-key="Ry<b>Dh</b>Pl IROS 2013"></cite>
+            </div>
+            <div class="fragment current-visible">
+                <video
+                    class="fragment-play"
+                    loop="true"
+                    muted="True"
+                    height="250"
+                    data-playbackRate="0.25"
+                >
+                    <source type="video/mp4" data-src="media/jing-bi-aaai-2020/compressed.mp4#t=35,60"/>
+                </video>
+                <h4>Learning from Interventions</h4>
+                <cite data-key="Bi<b>Dh</b>XiXu AAAI 2020"></cite>
+            </div>
+            <div class="fragment current-visible">
+                <video
+                    class="fragment-play"
+                    loop="true"
+                    muted="True"
+                    height="250"
+                    data-playbackRate="2.0"
+                >
+                    <source type="video/mp4" data-src="media/cvpr2016/allenergies_2.mp4#t=10,20"/>
+                </video>
+                <h4>Continuous occlusion modeling</h4>
+                <cite data-key="<b>Dh</b>TrChCo CVPR 2016"></cite>
+            </div>
+            <div class="fragment current-visible">
+                <video
+                    class="fragment-play"
+                    loop="true"
+                    muted="True"
+                    height="300"
+                    data-playbackRate="8.0"
+                >
+                    <source type="video/mp4" data-src="media/david-peitz/stacking-blocks-ff.mp4#t=40,240">
+                </video>
+            </div>
+        </div>
+        <div class="div-row-stack fragment"
+             style="background-color:white;position:absolute;top:0;left:0">
+            <div >
+                <video
+                    class="slide-play"
+                    loop="True"
+                    muted="True"
+                    data-playbackRate = "2.0"
+                >
+                    <source type="video/mp4" data-src="media/orcvio/jackal_orcvio-2020-11-20_17.06.49.mp4#t=40,50"/>
+                </video>
+                <h6>Visual Inertial Odometry</h6>
+            </div>
+            <div class="">
+                <video
+                    class="slide-play"
+                    loop="true"
+                    muted="True"
+                    height="250"
+                    data-playbackRate="2.0"
+                >
+                    <source type="video/mp4" data-src="media/mutloc/concatenated-ffmpeg-faster.ogg#t=10,20"/>
+                </video>
+                <h4>Mutual Localization</h4>
+                <cite data-key="Ry<b>Dh</b>Pl IROS 2013"></cite>
+            </div>
+            <div class="">
+                <video
+                    class="slide-play"
+                    loop="true"
+                    muted="True"
+                    height="250"
+                    data-playbackRate="2.0"
+                >
+                    <source type="video/mp4" data-src="media/jing-bi-aaai-2020/compressed.mp4#t=35,60"/>
+                </video>
+                <h4>Learning from Interventions</h4>
+                <cite data-key="Bi<b>Dh</b>XiXu AAAI 2020"></cite>
+            </div>
+            <div class="">
+                <video
+                    class="slide-play"
+                    loop="true"
+                    muted="True"
+                    height="250"
+                    data-playbackRate="2.0"
+                >
+                    <source type="video/mp4" data-src="media/cvpr2016/allenergies_2.mp4#t=10,20"/>
+                </video>
+                <h4>Continuous occlusion modeling</h4>
+                <cite data-key="<b>Dh</b>TrChCo CVPR 2016"></cite>
+            </div>
+        </div>
+    </div>
+    <cite data-key="<b>Dh</b>KuDaCo ICRA 2014"></cite>
+    <cite data-key="<b>Dh</b>RyCo IROS 2013"></cite>
+    <cite data-key="<b>Dh</b>BaGrSiCo NeurIPS Wkshp 2017"></cite>
+    <cite data-key="Ry<b>Dh</b>Pl IROS 2013"></cite>
+    <cite data-key="Ku<b>Dh</b>Co AAAI 2014"></cite>
+    <cite data-key="Ku<b>Dh</b>KoCo PAMI 2017"></cite>
+    <cite data-key="<b>Dh</b>BaSiCo ArXiV 2019"></cite>
+    <cite data-key="Kh<b>Dh</b>FrAt L4DC 2020"></cite>
+    <cite data-key="Bi<b>Dh</b>XiXu AAAI 2020"></cite>
+    <cite data-key="Wa<b>Dh</b>At ICRA 2020"></cite>
+    <aside class="notes" data-markdown>
+      - Navigation is the problem of converting sequence of observation to a
+        sequence of actions for the purpose of going from one place to another.
+      - It is often addressed in three parts.
+      - Mapping---which is the estimation of the static part of the environment.
+      - Localization---which is the estimation of the dynamic state of the
+        environment like the agents location in the map.
+      - and Planning which is the estimation of the sequence of action that
+        moves the agent from current state to the desired goal.
+      + Most of my work has been focused around mapping with some work around
+      localization and planning.
+      + Today I am going to talk about three of my works.
+      + First I am going to talk about my work on making mapping faster by using
+      modern inference methods on factor graphs.
+      + Then I am going to talk about mutual localiztion that intern enables
+      faster mapping by allowing robots to divide and conquer the environment.
+      + In the end I will talk about making goal conditioned reinforcement
+      learning faster by removing redundant computation.
+        + 
+    </aside>
+</section>
+
+
+
+<section id="final">
+    <h2>Take aways</h2>
+    <style>
+     .div-row div {
+         display: inline-block;
+     }
+     .div-row div video {
+         margin: 5px 0;
+         height: 160px;
+     }
+     .div-row div img {
+         margin: 5px 0;
+         height: 190px;
+         object-fit: cover;
+         object-position: top;
+         height: 190px;
+         width: 190px;
+     }
+    </style>
+    <ol>
+        <li>Work hard</li>
+        <li>Never give up</li>
+    </ol>
+        <h6><b>vikasdhiman.info</b></h6>
+</section>
+
+
+
+
+
+<!-- End of slides -->
+
+
+<section id="ai" data-visibility="uncounted">
+    <h2> Artificial Intelligence </h2>
+    <table><tr><td class="img-row">
+        <img style="height:220px" class="fragment" data-src="./media/alpha-go-le-sedol.jpg" />
+        <span style="width:85px;display:inline-block"> &nbsp; </span>
+        <img style="height:220px" class="fragment" data-src="./media/protein-folding.png" />
+
+    </td></tr>
+    <tr><td class="img-row">
+        <img style="height:220px" class="fragment" data-src="./media/2022-stable-diffusion.png" />
+        <span class="fragment">
+            <video
+                class="fragment-play"
+                style="height:220px"
+                loop="true"
+                muted="True"
+                currentTime="60"
+                height="245"
+            >
+                <source type="video/mp4" data-src="media/rubiks-cube.mp4#t=30,45"/>
+            </video>
+        </span>
+    </td></tr></table>
+</section>
+
+<section id="what-is-ai" data-visibility="uncounted">
+    <a href="https://teachablemachine.withgoogle.com/train/image" >Teachable Machines</a>
+</section>
+
+<section id="what-is-ai-2" data-visibility="uncounted">
+    <h2>How it works</h2>
+    <img data-src="./media/ai-basics/Perceptron_algorithm.gif" height="250" /><br/>
+    <footnote> E.pajouheshgar, CC BY-SA 4.0, via Wikimedia Commons</footnote>
+    <div class="fragment">
+    Important concepts:<br/>
+    <ol>
+        <li>Vectors, Matrices and 3D geometry</li>
+        <li>Differentiation and limits</li>
+        <li>Probability</li>
+        <li>Programming</li>
+    </ol>
+    </div>
+</section>
+
+<!-- Start of Footer -->
+<div  style="position:absolute; left:0; bottom:0px; width:100%">
+  <div id="footer" ><!-- place holder for footer -->
+  </div>
+  <div id="footer-lower" style="display:flex; justify-content: space-between; width:100%">
+      <!--  img style="height:40px;padding:5px;vertical-align:middle" src="./media/umaine-logo.svg"/-->
+      <div style="font-size: 14px; opacity:0.8; margin: auto;"> </div>
+
+      <div style="font-size: 14px; padding:5px; opacity:0.8; margin: 2px 0" id="slide-number-container"> &nbsp; </div>
+  </div>
+</div>
+<div style="clear: both;"></div>
+<!-- End of Footer -->
+            </div> <!-- class="slides" -->
+		</div> <!-- class="reveal"-->
+        <script src="reveal.js/dist/reveal.js"></script>
+        <script src="reveal.js/plugin/markdown/markdown.js"></script>
+	    <script src="reveal.js/plugin/highlight/highlight.js"></script>
+	    <script src="reveal.js-plugins/menu/menu.js"></script>
+	    <script src="reveal.js-plugins/chalkboard/plugin.js"></script>
+	    <script src="reveal.js-plugins/audio-slideshow/plugin.js"></script>
+	    <script src="reveal.js-plugins/audio-slideshow/RecordRTC.js"></script>
+	    <script src="reveal.js-plugins/audio-slideshow/recorder.js"></script>
+
+        <script src="index.js" > </script>
+        <script>
+         window.MathJax = {
+             chtml: {
+                 scale: 0.8
+             },
+             tex: {
+                 packages: ['base', 'ams', 'color', 'boldsymbol', 'newcommand',
+                            'html']
+             },
+             loader: {
+                 load: ['[tex]/ams', '[tex]/color', '[tex]/boldsymbol',
+                 '[tex]/newcommand', '[tex]/html']
+             }
+         };
+        </script>
+        <script type="text/javascript" id="MathJax-script" async
+         src="MathJax/es5/tex-chtml.js"  >
+         <!-- src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"-->
+        </script>
+
+    </body>
+</html>
+

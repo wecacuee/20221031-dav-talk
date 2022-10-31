@@ -1,0 +1,11 @@
+# Title
+
+Safe robots that learn
+
+# Abstract
+
+To enable autonomous robots in unstructured environments, we need robots that learn and adapt to the environment. However, online-learning introduces uncertainty which can lead to unsafe behavior, unless accounted for in control of the robot. In this talk I will focus on learning a model of system dynamics online while satisfying safety constraints. Our objective is to avoid offline system identification or hand-specified models and allow a system to safely and autonomously estimate and adapt its own model during operation. Given streaming observations of the system state, we use Bayesian learning to obtain a distribution over the system dynamics. We show that a safe control policy can be synthesized for systems with arbitrary relative degree and probabilistic CLF-CBF constraints by solving a second order cone program (SOCP). 
+
+# Bio
+
+Vikas Dhiman is a Postdoctoral Researcher at the Contextual Robotics Institute and the Existential Robotics Lab at the University of California, San Diego. His works lie in the localization, mapping and control algorithms for applications in robotics. He graduated in Elec. Engg (2008) from Indian Institute of Technology, Roorkee, earned his MS (2014) from University at Buffalo, and received his PhD (2019) from the University of Michigan, Ann Arbor. 
